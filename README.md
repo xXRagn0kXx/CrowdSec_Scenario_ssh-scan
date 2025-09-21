@@ -9,20 +9,28 @@ Crea un archivo en:
 
 Con este contenido:
 ```yaml
+---
 type: trigger
 name: crowdsecurity/ssh-kex-mac-ban
-description: "Banea 1 año las IPs que causen errores de kex_exchange_identification o no matching MAC en SSH"
+description: "Bans IPs for 1 year that cause kex_exchange_identification or no matching MAC errors on SSH."
 filter: |
   evt.Parsed.program == "sshd" && (
-    Upper(evt.Parsed.message) contains "KEX_EXCHANGE_IDENTIFICATION" ||
-    Upper(evt.Parsed.message) contains "NO MATCHING MAC FOUND"
+    evt.Parsed.message contains "kex_exchange_identification" ||
+    evt.Parsed.message contains "no matching MAC found"
   )
 groupby: evt.Meta.source_ip
-blackhole: 1
+blackhole: 58760h
+reprocess: true
 labels:
   service: ssh
   type: bruteforce
+  behavior: "ssh:bruteforce"
+  remediation: true
+  confidence: 3
+  spoofable: 0
+  label: "SSH Bruteforce"
 ```
+
 2. Crear archivo de colección
 
 Así CrowdSec sabrá incluir el escenario en ejecución:
