@@ -75,7 +75,22 @@ logger -p auth.err -t sshd "error: kex_exchange_identification: Connection close
 
 y revisa:
 
+sudo dscli collections list
+
+cscli collections list
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ COLLECTIONS
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Name                                 📦 Status            Version  Local Path
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ crowdsecurity/linux                  ⚠️  enabled,tainted  0.3      /etc/crowdsec/collections/linux.yaml
+ crowdsecurity/ssh-kex-mac-ban        🏠  enabled,local             /etc/crowdsec/collections/ssh-kex-mac-ban.yaml
+ crowdsecurity/sshd                   ⚠️  enabled,tainted  0.7      /etc/crowdsec/collections/sshd.yaml
+ crowdsecurity/whitelist-good-actors  ✔️  enabled          0.2      /etc/crowdsec/collections/whitelist-good-actors.yaml
+
+
 sudo cscli alerts list
 
+sudo scclis decisions list
 
 Deberías ver un alerta + decisión de ban sobre la IP de origen.
