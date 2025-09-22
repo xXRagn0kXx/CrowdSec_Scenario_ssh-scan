@@ -78,6 +78,7 @@ y revisa:
 sudo dscli collections list
 
 cscli collections list
+```bash
 ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
  COLLECTIONS
 ─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -88,7 +89,7 @@ cscli collections list
  crowdsecurity/sshd                   ⚠️  enabled,tainted  0.7      /etc/crowdsec/collections/sshd.yaml
  crowdsecurity/whitelist-good-actors  ✔️  enabled          0.2      /etc/crowdsec/collections/whitelist-good-actors.yaml
 
-
+```
 sudo cscli alerts list
 
 sudo scclis decisions list
