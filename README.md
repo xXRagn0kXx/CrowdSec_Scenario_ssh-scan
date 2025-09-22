@@ -70,6 +70,8 @@ sudo systemctl reload crowdsec
 
 Haz una prueba forzando un log falso:
 
+cscli hubtest run ssh-kex-mac-ban
+
 logger -p auth.err -t sshd "error: kex_exchange_identification: Connection closed by remote host"
 
 
