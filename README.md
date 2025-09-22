@@ -94,7 +94,7 @@ cscli collections list
 
 ✔️  enabled > activada
 ⚠️  tainted > modificada 
-🏠  local > creada por nosotros
+🏠  local   > creada por nosotros
 ```
 
 sudo cscli alerts list
