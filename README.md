@@ -52,6 +52,7 @@ Edita tu archivo de bouncers o de configuración de decisiones para que el ban d
 
 Por ejemplo en /etc/crowdsec/profiles.yaml añade al inicio algo así:
 ```yaml
+---
 name: ssh-kex-mac-ban
 filters:
  - Alert.Remediation == true && Alert.Scenario == "crowdsecurity/ssh-kex-mac-ban"
